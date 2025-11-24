@@ -1,0 +1,94 @@
+.offer-section {
+  padding: 80px 20px;
+  background: #000;
+  text-align: center;
+  color: white;
+}
+
+.offer-title {
+  font-size: 3rem;
+  font-family: "Cinzel Decorative", serif;
+  margin-bottom: 50px;
+}
+
+.offer-title span {
+  color: gold;
+}
+
+/* Container */
+.offer-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Card */
+.offer-card {
+  background: #111;
+  padding: 35px;
+  width: 300px;
+  border-radius: 20px;
+  border: 2px solid gold;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.22);
+  transition: 0.3s;
+  position: relative;
+}
+
+/* GOLD DISCOUNT BADGE */
+.discount-badge {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background: gold;
+  color: black;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 0 10px gold;
+}
+
+.offer-card h3 {
+  color: gold;
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+.offer-card p {
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+/* Button */
+.offer-btn {
+  background: gold;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px gold;
+  transition: 0.2s;
+}
+
+.offer-btn:hover {
+  background: #d4af37;
+  box-shadow: 0 0 15px gold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .offer-card {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+/* GOLD LINE ABOVE SECTION */
+.gold-divider {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, gold, transparent);
+  margin-bottom: 40px;
+}

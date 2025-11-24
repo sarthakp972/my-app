@@ -1,0 +1,178 @@
+/* src/components/Services.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap');
+
+.services-root {
+  padding: 60px 20px;
+  background: #070707; /* deep black */
+  color: #e6c47a;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+.services-title {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  color: #f5d06f;
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  text-shadow: 0 4px 18px rgba(212,175,55,0.12);
+}
+
+.services-sub {
+  text-align: center;
+  color: #d4af37;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+/* list container */
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* each item */
+.service-item {
+  background: linear-gradient(180deg, rgba(13,13,13,0.6), rgba(8,8,8,0.85));
+  border: 1px solid rgba(212,175,55,0.14);
+  padding: 18px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 250ms ease;
+}
+
+/* alternate layout when reversed on desktop */
+.layout-reverse .img-col { order: 2; }
+.layout-reverse .content-col { order: 1; }
+
+/* image column */
+.service-img-wrap {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(212,175,55,0.08);
+  box-shadow: 0 10px 30px rgba(212,175,55,0.06);
+}
+
+.service-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  transition: transform 350ms ease, filter 350ms ease;
+}
+
+/* zoom on hover/focus */
+.service-item:hover .service-img,
+.service-item:focus-within .service-img {
+  transform: scale(1.04);
+  filter: brightness(0.95) saturate(1.04);
+}
+
+/* content */
+.service-content {
+  padding: 12px 6px;
+}
+
+.service-title {
+  font-family: "Playfair Display", serif;
+  color: #f5d06f;
+  margin-bottom: 10px;
+  font-size: 1.45rem;
+}
+
+.service-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px 0;
+}
+
+.service-bullet {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  color: #e6c47a;
+  margin-bottom: 8px;
+  font-size: 0.98rem;
+}
+
+.bullet-dot {
+  color: #d4af37;
+  font-weight: 700;
+  width: 18px;
+  display: inline-block;
+}
+
+/* CTA buttons */
+.btn-gold, .btn-outline-light {
+  border-radius: 28px;
+  padding: 8px 18px;
+}
+
+/* react-bootstrap variant override */
+.btn-gold {
+  background: linear-gradient(90deg, #d4af37, #f5d06f);
+  color: #0d0d0d;
+  border: none;
+  box-shadow: 0 8px 28px rgba(212,175,55,0.18);
+}
+
+.btn-outline-light {
+  background: transparent;
+  border: 1px solid rgba(245,208,111,0.12);
+  color: #f5d06f;
+}
+
+/* service note */
+.services-note {
+  margin-top: 30px;
+  text-align: center;
+  color: #f0e5b8;
+  background: rgba(212,175,55,0.04);
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(212,175,55,0.06);
+}
+
+/* responsive */
+@media (max-width: 992px) {
+  .service-img { height: 220px; }
+  .service-title { font-size: 1.3rem; }
+}
+
+@media (max-width: 768px) {
+  .layout-reverse .img-col, .layout-reverse .content-col { order: 0; } /* stack normally */
+  .service-img { height: 200px; }
+  .service-content { padding-top: 10px; }
+  .services-root { padding: 36px 14px; }
+  .services-title { font-size: 1.8rem; }
+}
+
+
+
+/* image column */
+.service-img-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(212,175,55,0.08);
+  box-shadow: 0 10px 30px rgba(212,175,55,0.06);
+}
+
+.service-img {
+  width: 100%;
+  height: 400px; /* thoda bada kiya */
+  object-fit: cover;
+  display: block;
+  transition: transform 350ms ease, filter 350ms ease;
+}
+
+/* responsive adjustments */
+@media (max-width: 992px) {
+  .service-img { height: 350px; } /* medium screens */
+}
+
+@media (max-width: 768px) {
+  .service-img { height: 450px; } /* small screens */
+}

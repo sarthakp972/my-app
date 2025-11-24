@@ -1,0 +1,90 @@
+.luxury-video-section {
+  display: flex;
+  align-items: center;
+  padding: 80px 40px;
+  background: linear-gradient(to right, #000, #1a1a1a);
+  color: white;
+  gap: 40px;
+  overflow: hidden;
+}
+
+.luxury-text {
+  width: 35%;
+}
+
+.luxury-title {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: "Cinzel Decorative", serif;
+}
+
+.luxury-title span {
+  color: gold;
+}
+
+.luxury-sub {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* SCROLL WRAPPER */
+.video-scroll-wrapper {
+  width: 65%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* SCROLL TRACK (Infinite Animation) */
+.video-scroll-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scrollLeft 25s linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* VIDEO BOX */
+.video-box {
+  min-width: 300px;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid gold;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+.luxury-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .luxury-video-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  .luxury-text {
+    width: 100%;
+  }
+  .video-scroll-wrapper {
+    width: 100%;
+  }
+  .video-box {
+    min-width: 220px;
+    height: 260px;
+  }
+}
+
+/* Hover par scrolling ruk jayegi */
+.video-scroll-wrapper:hover .video-scroll-track {
+  animation-play-state: paused;
+}

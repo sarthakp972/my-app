@@ -1,0 +1,208 @@
+/* src/components/Gallery.css */
+
+/* Base */
+.gallery-root {
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+  color: #e6c47a;
+  position: relative;
+  z-index: 2;
+}
+
+.gallery-title {
+  text-align: center;
+  color: #d4af37;
+  font-family: "Cinzel Decorative", serif;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* Responsive grid */
+.gallery-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: stretch;
+}
+
+/* 3 cols */
+@media (max-width: 1100px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 2 cols */
+@media (max-width: 800px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 1 col mobile */
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card */
+.gallery-card {
+  background: rgba(13, 13, 13, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+  transition: transform 180ms ease;
+  outline: none;
+}
+
+/* Image holder keeps aspect ratio */
+.img-wrap {
+  flex: 1 1 auto;
+  min-height: 180px;
+  overflow: hidden;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform-origin: center;
+  transition: transform 350ms ease;
+}
+
+/* on hover, scale image slightly */
+.gallery-card:focus .gallery-img,
+.gallery-card:hover .gallery-img {
+  transform: scale(1.06);
+}
+
+/* meta area */
+.card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: linear-gradient(180deg, rgba(13,13,13,0.6), rgba(13,13,13,0.85));
+  border-top: 1px solid rgba(212, 175, 55, 0.06);
+}
+
+.meta-title {
+  color: #f5d06f;
+  font-size: 0.95rem;
+}
+
+/* download button small */
+.download-btn {
+  background: transparent;
+  border: 1px solid rgba(212,175,55,0.18);
+  color: #f5d06f;
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(212,175,55,0.08);
+}
+
+/* Lightbox overlay */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 5, 5, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  padding: 20px;
+}
+
+/* Content */
+.lightbox-content {
+  position: relative;
+  max-width: 1100px;
+  width: 100%;
+  max-height: 92vh;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(13,13,13,0.6), rgba(6,6,6,0.9));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-image {
+  width: 100%;
+  height: auto;
+  max-height: 78vh;
+  object-fit: contain;
+  display: block;
+  background: #000;
+}
+
+/* Controls row */
+.lightbox-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: rgba(0,0,0,0.45);
+  width: 100%;
+}
+
+.lb-btn {
+  background: transparent;
+  border: 1px solid rgba(212,175,55,0.2);
+  color: #f5d06f;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.lb-download {
+  background: #d4af37;
+  color: #0d0d0d;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(212,175,55,0.22);
+}
+
+.lb-close {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  color: #f5d06f;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* mobile tweaks */
+@media (max-width: 600px) {
+  .gallery-root { padding: 18px 12px; }
+  .gallery-card { min-height: 220px; }
+  .gallery-title { font-size: 1.6rem; }
+  .lightbox-content { max-width: 98vw; max-height: 96vh; border-radius: 8px; }
+  .lightbox-controls { padding: 8px; gap: 8px; }
+  .lb-btn { padding: 6px 10px; }
+  .lb-download { padding: 6px 12px; }
+  .lb-close { right: 8px; top: 6px; font-size: 1.1rem; }
+}
