@@ -2,14 +2,14 @@ import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { motion } from "framer-motion";
 import "./About.css";
-
+import { AboutSectionImages } from "../constant";
 export default function About() {
   return (
     <div className="about-page">
-      {/* Hero Section */}
+     
       <section className="about-hero">
         <motion.h1 
-          initial={{ opacity: 0, y: 40 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="about-title"
@@ -23,43 +23,50 @@ export default function About() {
           transition={{ duration: 1 }}
           className="about-subtitle"
         >
-          Since 2002 • Traditional • Elegant • Premium Designs
+          Since 2015 • Traditional • Elegant • Premium Designs
         </motion.p>
       </section>
 
-      {/* Main Content */}
-      <Container className="about-section">
-        <Row className="align-items-center">
+ <Container className="about-section">
+  <Row className="align-items-center">
+    <Col md={6}>
+      <motion.div 
+          initial={false}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7 }}
+      >
+        <h2 className="section-title">Experience the Art of Exquisite Mehendi</h2>
+        
+        <p className="section-text">
+          Our team comprises <span className="highlight">20 skilled female artists</span> with 
+          <span className="highlight"> over 10 years of experience</span> across India. Each artist brings 
+          exceptional creativity and precision, ensuring every bride receives a personalized and stunning 
+          mehendi design that enhances her beauty on her special day.
+        </p>
+
+        <p className="section-text">
+          From intricate traditional patterns to contemporary designs, 
+          <span className="highlight">Bushra Mehendi Art</span> offers a wide range of options to suit every bride’s 
+          taste and style.
+        </p>
+
+        <p className="section-text">
+          What sets us apart is our commitment to client satisfaction. We carefully listen to each bride’s 
+          ideas and preferences, translating them into unique, personalized designs. Our attention to detail 
+          and dedication to creating a memorable experience has earned us a loyal clientele over the years.
+        </p>
+      </motion.div>
+    </Col>
+
           <Col md={6}>
             <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-            >
-              <h2 className="section-title">Get Ready for the Traditional Art of Mehendi</h2>
-              <p className="section-text">
-                Our team consists of <span className="highlight">20 female artists</span> with 
-                <span className="highlight"> 10+ years of experience</span> working all over India.
-                Our talented artists ensure that every bride receives a stunning mehendi design 
-                that complements her personality and enhances her beauty.
-              </p>
-
-              <p className="section-text">
-                From intricate traditional patterns to modern designs, 
-                <span className="highlight">Bushra Mehendi Art</span> offers endless options for every bride.
-              </p>
-            </motion.div>
-          </Col>
-
-          <Col md={6}>
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
+               initial={false}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
               className="about-img-box"
             >
               <Image 
-                src="https://lh6.googleusercontent.com/LBhO2mGUOqGUy_eIssKnZp2PPA2iZAZtnfnaxmcTV6MGW-rDMwMArrBLpQ760XL4Eh9vA4j0nyh8SO-Q02n1tTSdjUqr8XSDeQdJK0AyF1_qoEDMKALTNXgeQAPdlrdUMk0HpwzjdisQ9NsdNB8ZqotmiozckI1HwdirLiu_FJEmQGqx9ojQMuPpNXV7TQ" 
+                src={AboutSectionImages}
                 alt="Mehendi Art p" 
                 fluid 
                 className="about-img"
@@ -100,7 +107,7 @@ export default function About() {
         <h2 className="section-title center">Available Designs</h2>
 
         <div className="design-list">
-          {["Floral", "Pakistani", "Arabic", "Mumbai Pattern", "Hibiscus"].map((d, i) => (
+          {["Floral", "Bridal Mehendi", "Arabic", "Mumbai Pattern", "Hibiscus" ,"More"].map((d, i) => (
             <motion.div 
               key={i}
               className="design-box"

@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaInstagram, FaWhatsapp, FaFacebookF, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import { WHATSAPP_NUMBER, EMAIL, INSTAGRAM_LINK, YOUTUBE_LINK, CALLING_NUMBER, ADDRESS ,urlWhatsapp} from "../constant";
 import "./Footer.css";
 
 export default function Footer() {
@@ -19,20 +21,20 @@ export default function Footer() {
         <div className="footer-nav">
           <h4 className="gold">Quick Links</h4>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#aboutus">About Us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/products">Products</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/privacy-policy">Privacy Policy</Link></li> {/* Updated */}
           </ul>
         </div>
 
         {/* Contact Info */}
         <div className="footer-contact">
           <h4 className="gold">Contact Us</h4>
-          <p><FaPhoneAlt /> +91 98765 43210</p>
-          <p><FaEnvelope /> info@bhushramehendi.com</p>
+          <p><FaPhoneAlt /> {CALLING_NUMBER}</p>
+          <p><FaEnvelope /> {EMAIL}</p>
           <p><FaWhatsapp /> +91 98765 43210</p>
         </div>
 
@@ -40,10 +42,11 @@ export default function Footer() {
         <div className="footer-social">
           <h4 className="gold">Follow Us</h4>
           <div className="social-icons">
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaWhatsapp /></a>
-            <a href="#"><FaEnvelope /></a>
+            <a href={INSTAGRAM_LINK}><FaInstagram /></a>
+           
+            <a href={urlWhatsapp}><FaWhatsapp /></a>
+            <a href={`mailto:${EMAIL}`}><FaEnvelope /></a>
+
           </div>
         </div>
 

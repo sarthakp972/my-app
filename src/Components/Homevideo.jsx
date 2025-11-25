@@ -1,29 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./HomeVideo.css";
+import { videos } from "../constant";
 
 export default function HomeVideo() {
-  const videos = [
-    "/all_videos/video1.mp4",
-    "/all_videos/video2.mp4",
-    "/all_videos/video3.mp4",
-    "/all_videos/video4.mp4",
-    "/all_videos/video5.mp4",
-    "/all_videos/video6.mp4",
-    "/all_videos/video7.mp4",
-    "/all_videos/video8.mp4",
-    "/all_videos/video9.mp4",
-    "/all_videos/video10.mp4",
-    "/all_videos/video11.mp4",
-    "/all_videos/video12.mp4",
-    "/all_videos/video13.mp4",
-
-    "/all_videos/video14.mp4",
-    "/all_videos/video15.mp4",
-    "/all_videos/video16.mp4",
-    "/all_videos/video17.mp4",
-    "/all_videos/video18.mp4",
-  ];
 
   return (
     <section className="luxury-video-section">
@@ -37,10 +17,10 @@ export default function HomeVideo() {
         transition={{ duration: 0.8 }}
       >
         <h1 className="luxury-title">
-          Royal <span>Mehendi</span> Moments
+         ROYAL <span>MEHENDI</span> HIGHLIGHTS   
         </h1>
         <p className="luxury-sub">
-          Experience the elegance of luxury bridal & traditional mehendi artistry.
+           Experience beautiful mehendi art that blends traditional and modern styles. Our designs are elegant and luxurious, perfect for your special day. Get stunning mehendi art that leaves a lasting impression.
         </p>
       </motion.div>
 

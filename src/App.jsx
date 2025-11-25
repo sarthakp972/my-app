@@ -24,6 +24,7 @@ import Customized from './Category_images_page/Customized';
 import MehendiForKids from './Category_images_page/MehendiForKids';
 import MehendiClassesWorkshops from './Category_images_page/MehendiClassesWorkshops';
 import PageNotFound from './Pages/PageNotFound';
+import PrivacyPolicy from './Pages/PrivacyPolicy';
 
 
 
@@ -44,6 +45,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
 
         <Route path="/bridal-images" element={<Bridal />} />
+         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
            
         <Route path="/engagement-roka-images" element={<EngagementRoka />} />
         <Route path="/sangeet-weddingguest-images" element={<SangeetWeddingGuest />} />
@@ -56,6 +58,7 @@ function App() {
         <Route path="/customized-images" element={<Customized />} />
         <Route path="/mehendi-for-kids-images" element={<MehendiForKids />} />
         <Route path="/mehendi-classes-workshops-images" element={<MehendiClassesWorkshops />} />
+        
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     

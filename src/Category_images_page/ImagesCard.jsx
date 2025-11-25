@@ -1,4 +1,3 @@
-// src/components/ImagesCard.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import "./ImagesCard.css";
@@ -13,7 +12,7 @@ export default function ImagesCard({ image, title }) {
   return (
     <motion.div
       className="image-card"
-      initial="hidden"
+      initial={false}
       whileInView="visible"
       whileHover="hover"
       viewport={{ once: true }}

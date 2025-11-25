@@ -1,22 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { WHATSAPP_NUMBER, EMAIL, INSTAGRAM_LINK, YOUTUBE_LINK, CALLING_NUMBER, ADDRESS ,urlWhatsapp ,ProductsImages} from "../constant";
 
-// Sample Product Data
-const productData = [
-  { name: "Bridal Mehendi Pattern 01", image: "/product1.jpeg" },
-  { name: "Arabic Mehendi Style", image: "/product2.jpeg" },
-  { name: "Floral Design Collection", image: "/product1.jpeg" },
-  { name: "Pakistani Mehendi Style", image: "/product2.jpeg" },
-  { name: "Mumbai Special Designs", image: "/product1.jpeg" },
-  { name: "Hibiscus Collection", image: "/product2.jpeg" },
-];
 
 export default function Product() {
   return (
     <div style={{ position: "relative", fontFamily: "'Poppins', sans-serif" }}>
       {/* Background Video */}
       <video
-        src="/7.mp4"
+        src="https://res.cloudinary.com/dxahh0nqj/video/upload/v1764094587/home_page_video_vvvqab.mp4"
         autoPlay
         loop
         muted
@@ -43,7 +35,7 @@ export default function Product() {
         </h2>
 
         <div className="row g-4">
-          {productData.map((item, index) => (
+          {ProductsImages.map((item, index) => (
             <div key={index} className="col-md-4">
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -78,22 +70,26 @@ export default function Product() {
                   </h4>
 
                   <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    style={{
-                      background: "#d4af37",
-                      color: "#0d0d0d",
-                      border: "none",
-                      padding: "10px 30px",
-                      borderRadius: "25px",
-                      fontWeight: "600",
-                      boxShadow: "0 0 12px rgba(212, 175, 55, 0.5)",
-                      cursor: "pointer",
-                    }}
-                    onClick={() => alert(`${item.name} added to cart!`)}
-                  >
-                    Add to Cart
-                  </motion.button>
+  whileHover={{ scale: 1.1 }}
+  whileTap={{ scale: 0.95 }}
+  style={{
+    background: "#d4af37",
+    color: "#0d0d0d",
+    border: "none",
+    padding: "10px 30px",
+    borderRadius: "25px",
+    fontWeight: "600",
+    boxShadow: "0 0 12px rgba(212, 175, 55, 0.5)",
+    cursor: "pointer",
+  }}
+  onClick={() => {
+    alert(`${item.name} , Go to whatsapp!`);
+    window.open(`${urlWhatsapp}?text=${encodeURIComponent(`Hi, I want to book ${item.name}`)}`, "_blank");
+  }}
+>
+  BOOK NOW
+</motion.button>
+
                 </div>
               </motion.div>
             </div>

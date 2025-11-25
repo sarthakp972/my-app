@@ -1,12 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { WHATSAPP_NUMBER, EMAIL,YOUTUBE_LINK, ADDRESS, INSTAGRAM_LINK,CALLING_NUMBER, WHATSAPP_MESSAGE,GOOGLE_MAP_LINK} from "../constant";
 
 export default function ServicePromotion() {
   const navigate = useNavigate();
 
-  const whatsappNumber = "9582436535"; 
-  const contactNumber = "+91 9582436535"; 
+  const whatsappNumber = WHATSAPP_NUMBER; 
+  const contactNumber = CALLING_NUMBER; 
 
   const whatsappMessage = `Hello, I want to book your Mehendi Service. Please share the details.`;
 

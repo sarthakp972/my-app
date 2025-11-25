@@ -4,6 +4,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { motion } from "framer-motion";
 import "./Services.css";
 import { useNavigate } from "react-router-dom";
+import { WHATSAPP_NUMBER, EMAIL, INSTAGRAM_LINK, YOUTUBE_LINK, CALLING_NUMBER, ADDRESS ,urlWhatsapp} from "../constant";
 
 export const services = [
   {
@@ -15,7 +16,7 @@ export const services = [
       "Feet bridal mehendi",
       "Customised bridal themes (Dulha–Dulhan, name initials, portraits)"
     ],
-    img: "/sangeet/IMG_7040.PNG",
+    img: "https://res.cloudinary.com/dxahh0nqj/image/upload/v1764088932/6_kbsspt.jpg",
     path: "/bridal-images"
   },
   {
@@ -26,7 +27,7 @@ export const services = [
       "Minimal & stylish designs",
       "Personalized ring ceremony designs"
     ],
-    img: "/sangeet/IMG_7041.PNG",
+    img: "https://res.cloudinary.com/dxahh0nqj/image/upload/v1764089039/5_wcydrc.jpg",
     path: "/engagement-roka-images"
   },
   {
@@ -37,7 +38,7 @@ export const services = [
       "Fast & simple designs for multiple guests",
       "Per-hand / per-person packages"
     ],
-    img: "/sangeet/IMG_7043.PNG",
+    img: "https://res.cloudinary.com/dxahh0nqj/image/upload/v1764089070/1_cx8pzh.jpg",
     path: "/sangeet-weddingguest-images"
   },
   {
@@ -48,7 +49,7 @@ export const services = [
       "Shaded designs",
       "Bold outline patterns"
     ],
-    img: "/sangeet/IMG_7044.PNG",
+    img: "https://res.cloudinary.com/dxahh0nqj/image/upload/v1764089161/1_vif52q.jpg",
     path: "/arabic-images"
   },
   {
@@ -59,7 +60,7 @@ export const services = [
       "Rajasthani designs",
       "Detailed cultural patterns"
     ],
-    img: "/sangeet/IMG_7045.PNG",
+    img: "https://res.cloudinary.com/dxahh0nqj/image/upload/v1764089119/1_k8rdeb.jpg",
     path: "/indian-traditional-images"
   },
   {
@@ -69,7 +70,7 @@ export const services = [
       "Mix of Indian + Arabic",
       "Modern & trendy patterns"
     ],
-    img: "/sangeet/IMG_7047.PNG",
+    img: "https://res.cloudinary.com/dxahh0nqj/image/upload/v1764089429/1_zqqfzd.jpg",
     path: "/indo-arabic-fusion-images"
   },
   {
@@ -80,7 +81,7 @@ export const services = [
       "Customized faces or themes",
       "(High-skill premium service)"
     ],
-    img: "/sangeet/IMG_7048.PNG",
+    img: "https://res.cloudinary.com/dxahh0nqj/image/upload/v1764089655/4_tsmshu.jpg",
     path: "/portrait-images"
   },
   {
@@ -90,7 +91,7 @@ export const services = [
       "Baby shower themed designs",
       "Minimal & cute patterns"
     ],
-    img: "/sangeet/IMG_7049.PNG",
+    img: "https://res.cloudinary.com/dxahh0nqj/image/upload/v1764089239/1_i8nd3v.jpg",
     path: "/babyshower-godhbharai-images"
   },
   {
@@ -100,7 +101,7 @@ export const services = [
       "Karwa Chauth, Teej, Diwali, Eid, Navratri",
       "Festival-special packages"
     ],
-    img: "/sangeet/IMG_7040.PNG",
+    img: "https://res.cloudinary.com/dxahh0nqj/image/upload/v1764089677/6_ahr9ug.jpg",
     path: "/festival-images"
   },
   {
@@ -110,7 +111,7 @@ export const services = [
       "Names, Initials, Dates",
       "Symbols, Couple story designs"
     ],
-    img: "/sangeet/IMG_7040.PNG",
+    img: "https://res.cloudinary.com/dxahh0nqj/image/upload/v1764089277/5_fiadwn.jpg",
     path: "/customized-images"
   },
   {
@@ -120,7 +121,7 @@ export const services = [
       "Simple and cute patterns",
       "Fast application"
     ],
-    img: "/sangeet/IMG_7040.PNG",
+    img: "https://res.cloudinary.com/dxahh0nqj/image/upload/v1764088996/3_yyl374.jpg",
     path: "/mehendi-for-kids-images"
   },
   {
@@ -130,10 +131,11 @@ export const services = [
       "Basic mehendi course",
       "Advance bridal mehendi course"
     ],
-    img: "/sangeet/IMG_7040.PNG",
+    img: "https://res.cloudinary.com/dxahh0nqj/image/upload/v1764089536/5_o5qbra.jpg",
     path: "/mehendi-classes-workshops-images"
   },
 ];
+
 
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -148,7 +150,7 @@ export default function Services() {
       <Container>
         <motion.h2
           className="services-title"
-          initial={{ opacity: 0, y: -10 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
@@ -156,7 +158,7 @@ export default function Services() {
         </motion.h2>
 
         <p className="services-sub">
-          We offer professional mehendi services at your home, at our studio, or across India — <strong>Pan-India service & home visits available</strong>.
+          we offer professional mehendi services anywhere across India — <strong>Pan India Services & Home Visits available.</strong>.
         </p>
 
         <div className="services-list">
@@ -165,7 +167,7 @@ export default function Services() {
               className={`service-item ${idx % 2 === 0 ? "layout-normal" : "layout-reverse"}`}
               key={s.id}
               custom={idx}
-              initial="hidden"
+              initial={false}
               whileInView="visible"
               viewport={{ once: true, amount: 0.18 }}
               variants={cardVariants}
@@ -195,7 +197,7 @@ export default function Services() {
   variant="gold"
   className="me-3"
   onClick={() => {
-    const phoneNumber = "+919582436535"; 
+    const phoneNumber = WHATSAPP_NUMBER; 
     const message = `Hi, I am interested in your ${s.title} service. Please contact me.`;
     const urlWhatsapp = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
@@ -213,7 +215,7 @@ export default function Services() {
 
 
                       <Button variant="outline-light" onClick={() => navigate(s.path)}>
-                        View Photo
+                        View Photos
                       </Button>
                     </div>
                   </div>
@@ -224,7 +226,7 @@ export default function Services() {
         </div>
 
         <div className="services-note">
-          <strong>Note:</strong> We provide hygienic, professional artists who can come to your home. Travel available anywhere in India — we reach you wherever the celebration is.
+          <strong>Note:</strong> we have hygienic, professional & experienced artists, who can visit your house or travel anywhere in India- We reach you wherever the celebration is..
         </div>
       </Container>
     </div>

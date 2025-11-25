@@ -1,16 +1,72 @@
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 250px;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Different card sizes for premium look */
+.card-1 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.card-2 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.card-3 {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+.card-4 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.card-5 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+.card-6 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
 .image-card {
   background: #1a1a1a;
-  border: 2px solid #ffd700; /* gold border */
-  border-radius: 12px;
+  border: 2px solid #ffd700; /* Gold border */
+  border-radius: 16px;
   overflow: hidden;
-  margin: 10px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-img {
   width: 100%;
-  height: 250px;
+  height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.5s ease;
+}
+
+.image-card:hover .card-img {
+  transform: scale(1.05);
+}
+
+/* Responsive tweak for smaller screens */
+@media (max-width: 768px) {
+  .images-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 200px;
+    gap: 15px;
+  }
+
+  .card-1,
+  .card-3,
+  .card-5 {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
 }

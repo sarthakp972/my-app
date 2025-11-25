@@ -27,9 +27,10 @@ export default function HomeHeroSection() {
           height: "100%",
           objectFit: "cover",
           zIndex: -2,
+         
         }}
       >
-        <source src="/7.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dxahh0nqj/video/upload/v1764094587/home_page_video_vvvqab.mp4" type="video/mp4" />
       </video>
 
       {/* DARK OVERLAY FOR READABILITY */}
